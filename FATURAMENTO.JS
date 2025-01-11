@@ -1,12 +1,13 @@
 async function analiseFaturamento() {
   try {
+    // Acessa o arquivo Json atraves de um servidor node
     const resposta = await fetch('http://192.168.100.11:8080/dadosFaturamento.json');
     if (!resposta.ok) {
       throw new Error(" Erro ao buscar dados: " + resposta.status);
     }
     const dados = await resposta.json();
 
-    
+     // atribui os dados buscados para a variavel faturamentos 
     const faturamentos = dados;
      
     //busca somente os valores do Json 
